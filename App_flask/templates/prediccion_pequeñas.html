@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+
+{% block titulo %} {{nombre}} {% endblock %}
+
+
+{% block header %} Predicción para empresa <br> pequeña con NIF {{nombre}}  {% endblock %}
+
+
+{% block cuerpo %} 
+{% if z %}
+
+<form class="form_class" action="{{url_for('prediccion_medianas')}}" style="background-color: rgb(226, 118, 118);">
+    <div class="form_div">
+        <h4> {{y}} </h4>
+    </div>
+</form>
+{% else %}
+<form class="form_class" style="background-color: rgb(208, 238, 159);" >
+    <div class="form_div">
+        <h4> {{y}} </h4>
+    </div>
+</form>
+
+
+{% endif %}
+{% endblock %}

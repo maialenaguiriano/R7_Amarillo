@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+
+{% block titulo %} {{nombre}} {% endblock %}
+
+
+{% block header %} Datos del balance {% endblock %}
+
+
+{% block cuerpo %} 
+
+<form id="login_form" class="form_class" action="{{url_for('introducir_datos') }}" method="POST">
+    <div class="form_div">
+        <h4>Introduzca los datos correspondientes a la empresa con NIF {{nombre}}: </h4>
+        <br>
+        <h4 style="color: red;">Del ultimo ejercicio</h4>
+        <br>
+        
+        <table>
+            <tr>
+                <td>
+            <label>Activo circulante</label>
+            <input class="field_class" name="a_circulante" type="number" placeholder="Miles de €" step="0.1">
+                </td>
+                <td>
+            <label>Pasivo liquido</label>
+            <input class="field_class" name="p_liquido" type="number" placeholder="Miles de €" step="0.1" autofocus>  
+                </td>
+                <td>
+            <label>Total <br> activo</label>
+            <input class="field_class" name="total_a" type="number" placeholder="Miles de €" step="0.1" autofocus>
+                </td>
+                <td>
+            <label>Total<br> pasivo</label>
+            <input class="field_class" name="total_p" type="number" placeholder="Miles de €"step="0.1">
+                </td>
+            </tr> 
+            
+            <tr> 
+                <td>
+            <label>Resultado de ejercicio</label>
+            <input class="field_class" name="r_de_e" type="number" placeholder="Miles de €" step="0.1"autofocus>  
+                </td>
+                <td>
+            <label>Fondos propios</label>
+            <input class="field_class" name="f_p" type="number" placeholder="Miles de €" step="0.1"autofocus>
+                </td>
+                <td>
+            <label>Otros activos liquidos</label>
+            <input class="field_class" name="otros_a_liquidos" type="number" step="0.1"placeholder="Miles de €">
+                </td>
+                <td>
+            <label>Deudores <br><br> </label>
+            <input class="field_class" name="deudores" type="number" placeholder="Miles de €" step="0.1"autofocus>  
+                </td>
+            </tr>
+            <tr> 
+               
+                <td>
+            <label>Ebitda </label>
+            <input class="field_class" name="ebitda" type="number" placeholder="Miles de €"step="0.1" autofocus>  
+                </td>
+                <td>
+            <label>Cash flow</label>
+            <input class="field_class" name="c_f" type="number" placeholder="Miles de €" step="0.1"autofocus>  
+                </td>
+                <td>
+            <label>Tesoreria</label>
+            <input class="field_class" name="tesoreria" type="number" placeholder="Miles de €" step="0.1"autofocus>  
+                </td> 
+        </table>
+        <!-- <input type = "submit" value = "Enviar archivo"/> -->
+        
+        <br>
+        
+        <button class="submit_class" type="submit" form="login_form">Enviar</button>
+    </div>
+    
+</form>
+
+
+{% endblock %} 

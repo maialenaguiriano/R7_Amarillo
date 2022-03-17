@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+
+{% block titulo %} {{nombre}} {% endblock %}
+
+
+{% block header %} Log in empresa {% endblock %}
+
+
+{% block cuerpo %} 
+
+<form id="login_form" class="form_class" action="{{url_for('login') }}" method="POST">
+            <div class="form_div">
+                <label>Login:</label>
+                <input class="field_class" name="name" type="text" placeholder="NIF de la empresa" autofocus>
+                <h3 style="color: red;"> {{msg}}</h3>
+                <br>
+                <!-- <label>Tamaño de la empresa:</label> -->
+                <!-- <input id="pass" class="field_class" name="tamaño" type="number" placeholder="10"> -->
+                <label>Selecciona el modelo que quieres usar:</label>
+                <br>
+                <select name="models" class="field_class" autofocus>
+                <option value="general">General</option>
+                <option value="sector">Por sector</option>
+                <option value="tamaño">Por tamaño</option>
+                </select>
+                <button class="submit_class" type="submit" form="login_form">Entrar</button>
+            </div>
+            
+</form>
+
+{% endblock %}
+
+
+
+
+
